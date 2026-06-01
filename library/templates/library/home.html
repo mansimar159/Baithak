@@ -12,12 +12,13 @@
 <body>
 
     <nav>
-        <h2>Baithak</h2>
+        <h2><a href="{% url 'home' %}">Baithak</a></h2>
 
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="#">Features</a></li>
-            <li><a href="#">Booking</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Live Availability</a></li>
             <li><a href="{% url 'login' %}">Login</a></li>
         </ul>
     </nav>
