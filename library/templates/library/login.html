@@ -73,7 +73,8 @@
     <div class="login-container">
         <h2>Student Login</h2>
 
-        <form action="#" method="POST">
+        <form method="POST">
+            {% csrf_token %}
 
             <div class="input-group">
                 <label for="email">Thapar Email ID</label>
