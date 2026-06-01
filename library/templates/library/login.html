@@ -21,6 +21,31 @@
             background-color: #f4f6f9;
         }
 
+        nav{
+            background:#1e3a8a;
+            color:white;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:15px 8%;
+        }
+
+        nav h2{
+            font-size:28px;
+        }
+
+        nav ul{
+            list-style:none;
+            display:flex;
+            gap:25px;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
         .login-container {
             width: 400px;
             padding: 30px;
@@ -69,6 +94,18 @@
     </style>
 </head>
 <body>
+
+    <nav>
+        <h2><a href="{% url 'home' %}">Baithak</a></h2>
+
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Live Availability</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+        </ul>
+    </nav>
 
     <div class="login-container">
         <h2>Student Login</h2>
