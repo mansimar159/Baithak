@@ -67,19 +67,6 @@
             margin-bottom:30px;
         }
 
-        .btn{
-            background:#2563eb;
-            color:white;
-            padding:14px 30px;
-            text-decoration:none;
-            border-radius:6px;
-            font-size:18px;
-        }
-
-        .btn:hover{
-            background:#1d4ed8;
-        }
-
         /* Sections */
         section{
             padding:70px 8%;

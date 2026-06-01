@@ -14,11 +14,8 @@
         }
 
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             background-color: #f4f6f9;
+            min-height: 100vh;
         }
 
         nav{
@@ -44,6 +41,36 @@
             color:white;
             text-decoration:none;
             font-weight:bold;
+        }
+
+        .hero{
+            height:85vh;
+            background:linear-gradient(rgba(0,0,0,0.6),
+            rgba(0,0,0,0.6)),
+            url("https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1500&q=80");
+            background-size:cover;
+            background-position:center;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+            padding:20px;
+        }
+
+        .hero-content{
+            max-width:900px;
+        }
+
+        .hero h1{
+            font-size:55px;
+            margin-bottom:20px;
+        }
+
+        .hero p{
+            font-size:20px;
+            line-height:1.7;
+            margin-bottom:30px;
         }
 
         .login-container {
@@ -106,6 +133,19 @@
             <li><a href="{% url 'login' %}">Login</a></li>
         </ul>
     </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find. Book. Study.</h1>
+
+            <p>
+                Baithak is a smart library seat booking and occupancy
+                management platform that helps students reserve seats,
+                view real-time availability, and eliminate ghost bookings
+                using QR-based verification.
+            </p>
+        </div>
+    </section>
 
     <div class="login-container">
         <h2>Student Login</h2>
