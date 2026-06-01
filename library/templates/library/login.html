@@ -6,55 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Login</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <style>
-        .login-container {
-            margin:70px auto;
-            width: 400px;
-            padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .input-group {
-            margin-bottom: 15px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .btn {
-            width: 100%;
-            padding: 12px;
-            background-color: #0056b3;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: #004494;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'style1.css' %}">
 </head>
 <body>
 
@@ -85,6 +37,12 @@
 
     <div class="login-container">
         <h2>Student Login</h2>
+
+        {% if error %}
+        <p style="color:red; text-align:center; margin-bottom:15px;">
+        {{ error }}
+    </p>
+    {% endif %}
 
         <form method="POST">
             {% csrf_token %}
