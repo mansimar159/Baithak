@@ -48,3 +48,9 @@ def index_view(request):
     return render(request, 'library/index.html', {
         "name": request.session.get("student_name")
     })
+
+def book_seat(request):
+    return render(request, 'library/seat.html')
+
+def notification(request):
+    return render(request, 'library/notification.html')

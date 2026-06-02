@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baithak - Smart Library Seat Booking</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+    <nav>
+        <h2><a href="{% url 'index' %}">Baithak</a></h2>
+
+        <ul>
+            <li><a href="{% url 'index' %}">Dashboard</a></li>
+            <li><a href="{% url 'seat' %}">Book Seat</a></li>
+            <li><a href="#my-reservation">My Reservation</a></li>
+            <li><a href="#">Break Status</a></li>
+            <li><a href="{% url 'notification' %}">Notifications</a></li>
+            <li><a href="{% url 'home' %}">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find. Book. Study.</h1>
+
+            <p>
+                Baithak is a smart library seat booking and occupancy
+                management platform that helps students reserve seats,
+                view real-time availability, and eliminate ghost bookings
+                using QR-based verification.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        
+    </section>
+
+    <footer>
+        <p>© 2026 Baithak | Smart Library Seat Booking System</p>
+    </footer>
+
+</body>
+</html>
