@@ -34,11 +34,84 @@
                 using QR-based verification.
             </p>
         </div>
-    </section>
+    </section><br><br>
+
+    <div class="legend">
+
+    <div class="legend-item">
+        <div class="seat-box1 available"></div>
+        <span>Available</span>
+    </div>
+
+    <div class="legend-item">
+        <div class="seat-box1 occupied"></div>
+        <span>Occupied</span>
+    </div>
+
+    <div class="legend-item">
+        <div class="seat-box1 reserved"></div>
+        <span>Reserved</span>
+    </div>
+
+</div>
 
     <section>
+        <h1>Ground Floor Seats</h1><br>
 
+    <div class="seats-container">
+    {% for seat in seats0 %}
+        <div class="seat-box">
+            {{ seat }}
+        </div>
+    {% endfor %}
+</div><br>
+
+<h1>First Floor Seats</h1><br>
+
+    <div class="seats-container">
+    {% for seat in seats1 %}
+        <div class="seat-box">
+            {{ seat }}
+        </div>
+    {% endfor %}
+</div><br>
+
+<h1>Second Floor Seats</h1><br>
+
+    <div class="seats-container">
+    {% for seat in seats2 %}
+        <div class="seat-box">
+            {{ seat }}
+        </div>
+    {% endfor %}
+</div><br>
+
+<h1>Third Floor Seats</h1><br>
+
+    <div class="seats-container">
+    {% for seat in seats3 %}
+        <div class="seat-box">
+            {{ seat }}
+        </div>
+    {% endfor %}
+</div><br>
+
+<h1>Fourth Floor Seats</h1><br>
+
+    <div class="seats-container">
+    {% for seat in seats4 %}
+        <div class="seat-box">
+            {{ seat }}
+        </div>
+    {% endfor %}
+</div>
     </section>
+
+    <div class="button-container">
+    <button class="seat-select">
+        Select Seat
+    </button>
+</div>
 
     <footer>
         <p>© 2026 Baithak | Smart Library Seat Booking System</p>
