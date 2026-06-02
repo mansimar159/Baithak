@@ -16,9 +16,7 @@
 
         <ul>
             <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="#">Features</a></li>
-            <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#">Live Availability</a></li>
+            <li><a href="{% url 'home' %}#how-it-works">How It Works</a></li>
             <li><a href="{% url 'login' %}">Login</a></li>
         </ul>
     </nav>
@@ -69,10 +67,10 @@
             </div>
 
             <div class="card">
-                <h3>👥 Group Study Rooms</h3>
+                <h3>🔔 Instant Notifications</h3>
                 <p>
-                    Reserve collaborative study spaces for projects,
-                    discussions, and group learning.
+                    Receive alerts for check-in deadlines, break expirations,
+                    and automatic seat release events.
                 </p>
             </div>
 
@@ -84,6 +82,14 @@
                 </p>
             </div>
 
+            <div class="card">
+                <h3>🪑 Fair Seat Usage</h3>
+                <p>
+                    Prevents students from reserving seats by leaving bags,
+                    books, or personal belongings unattended for long periods.
+                    Seats are automatically released when occupancy rules are violated.
+                </p>
+            </div>
             <div class="card">
                 <h3>🔐 Secure Login</h3>
                 <p>
