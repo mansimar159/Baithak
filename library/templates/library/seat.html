@@ -17,7 +17,6 @@
         <ul>
             <li><a href="{% url 'index' %}">Dashboard</a></li>
             <li><a href="{% url 'seat' %}">Book Seat</a></li>
-            <li><a href="{% url 'break' %}">Break Status</a></li>
             <li><a href="{% url 'notification' %}">Notifications</a></li>
             <li><a href="{% url 'home' %}">Logout</a></li>
         </ul>
@@ -60,7 +59,7 @@
 
     <div class="seats-container">
     {% for seat in seats0 %}
-        <div class="seat-box">
+        <div class="seat-box" data-floor="ground" onclick="selectSeat(this)">
             {{ seat }}
         </div>
     {% endfor %}
@@ -70,7 +69,7 @@
 
     <div class="seats-container">
     {% for seat in seats1 %}
-        <div class="seat-box">
+        <div class="seat-box" data-floor="first" onclick="selectSeat(this)">
             {{ seat }}
         </div>
     {% endfor %}
@@ -80,7 +79,7 @@
 
     <div class="seats-container">
     {% for seat in seats2 %}
-        <div class="seat-box">
+        <div class="seat-box" data-floor="second" onclick="selectSeat(this)">
             {{ seat }}
         </div>
     {% endfor %}
@@ -90,7 +89,7 @@
 
     <div class="seats-container">
     {% for seat in seats3 %}
-        <div class="seat-box">
+        <div class="seat-box" data-floor="third" onclick="selectSeat(this)">
             {{ seat }}
         </div>
     {% endfor %}
@@ -100,7 +99,7 @@
 
     <div class="seats-container">
     {% for seat in seats4 %}
-        <div class="seat-box">
+        <div class="seat-box" data-floor="fourth" onclick="selectSeat(this)">
             {{ seat }}
         </div>
     {% endfor %}
@@ -108,10 +107,10 @@
     </section>
 
     <div class="button-container">
-    <button class="seat-select1">
+    <button class="seat-select1" onclick="confirmSeat()">
         Select Seat
     </button>
-    <button class="seat-select2">
+    <button class="seat-select2" onclick="cancelSeat()">
         Cancel Seat
     </button>
 </div>
@@ -120,5 +119,6 @@
         <p>© 2026 Baithak | Smart Library Seat Booking System</p>
     </footer>
 
+<script src="{% static 'script1.js' %}"></script>
 </body>
 </html>

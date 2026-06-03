@@ -17,7 +17,6 @@
         <ul>
             <li><a href="{% url 'index' %}">Dashboard</a></li>
             <li><a href="{% url 'seat' %}">Book Seat</a></li>
-            <li><a href="{% url 'break' %}">Break Status</a></li>
             <li><a href="{% url 'notification' %}">Notifications</a></li>
             <li><a href="{% url 'home' %}">Logout</a></li>
         </ul>
@@ -39,15 +38,29 @@
     <div class="top-section">
     <section class="dashboard-header">
     <h1>Welcome, {{ name }}</h1><br>
-    <p>Manage your reservations, track seat availability, and monitor your study sessions.</p>
+    <p>Manage your reservations, track seat availability, and monitor your study sessions.</p><br>
+
+    <div class="timers-container">
+
+    <div class="card1">
+        <h2>Reservation Timer</h2>
+        <h3 id="countdown">01:00 min</h3>
+    </div><br>
+
+    <div class="card1">
+        <h2>Break Timer</h2>
+        <h3 id="break-countdown">30:00 min</h3>
+    </div>
+
+</div>
 </section>
 
 <section class="reservation-box">
     <div class="card">
-    <h2>My Reservation</h2><br>
-    <h3>Seat </h3>
-    <p><strong>Floor:</strong></p>
-    <p><strong>Status:</strong></p>
+    <h2>My Reservation</h2><br><br>
+    <h3>Seat No. <span id="seat-number">-</span></h3><br><br>
+    <p><strong>Floor:</strong> <span id="seat-floor">-</span></p><br>
+    <p><strong>Status:</strong> <span id="seat-status">None</span></p><br>
     <p><strong>Check-In Time:</strong></p>
 </div>
 </section>
@@ -56,51 +69,51 @@
 <section class="stats-container">
 <div class="card">
     <h3>Available Seats</h3>
-    <p>450</p>
+    <p id="available-seats">450</p>
 </div>
 
 <div class="card">
     <h3>Occupied Seats</h3>
-    <p>0</p>
+    <p id="occupied-seats">0</p>
 </div>
 
 <div class="card">
     <h3>Reserved Seats</h3>
-    <p>0</p>
+    <p id="reserved-seats">0</p>
 </div>
 </section>
 
 <section style="background:white;">
 
 <div class="section-title">
-    <h2>Availability By Floor</h2>
+    <h2>Seats in Each Floor</h2>
 </div>
 
 <div class="steps">
 
     <div class="step">
         <h3>Ground Floor</h3>
-        <p>188 Seats Available</p>
+        <p id="ground-floor">188 Seats</p>
     </div>
 
     <div class="step">
         <h3>First Floor</h3>
-        <p>82 Seats Available</p>
+        <p id="first-floor">82 Seats</p>
     </div>
 
     <div class="step">
         <h3>Second Floor</h3>
-        <p>60 Seats Available</p>
+        <p id="second-floor">60 Seats</p>
     </div>
 
     <div class="step">
         <h3>Third Floor</h3>
-        <p>54 Seats Available</p>
+        <p id="third-floor">54 Seats</p>
     </div>
 
     <div class="step">
         <h3>Fourth Floor</h3>
-        <p>66 Seats Available</p>
+        <p id="id="fourth-floor"">66 Seats</p>
     </div>
 
 </div>
@@ -114,7 +127,7 @@
 
 <div class="features">
 
-    <a href="{% url 'index' %}" class="card-link">
+    <a href="{% url 'seat' %}" class="card-link">
     <div class="card">
         <h3>📖 Book Seat</h3><br>
         <p>Reserve a seat from the available library spaces.</p>
@@ -147,5 +160,6 @@
         <p>© 2026 Baithak | Smart Library Seat Booking System</p>
     </footer>
 
+<script src="{% static 'script.js' %}"></script>
 </body>
 </html>

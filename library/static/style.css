@@ -120,7 +120,23 @@
     border:1px solid #ccc;
     border-radius:6px;
     font-weight:bold;
+    cursor: pointer;
     box-shadow:0 2px 4px rgba(0,0,0,0.1);
+}
+
+.seat-box.clicked{
+    background-color:#a8acb2;
+    border-color: #1d4ed8;
+}
+
+.seat-box.reserved{
+    background-color:rgb(236, 236, 134);
+    border-color: #1d4ed8;
+}
+
+.seat-box.cancelled{
+    background-color:#ffffff;
+    border-color: #ccc;
 }
         
         .top-section{
@@ -203,6 +219,13 @@
             border-radius:10px;
             box-shadow:0 3px 10px rgba(0,0,0,0.1);
             transition:0.3s;
+        }
+
+        .card1{
+            background:white;
+            padding:25px;
+            border-radius:10px;
+            width: 300px;
         }
 
         .card:hover{

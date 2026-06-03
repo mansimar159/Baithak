@@ -60,6 +60,3 @@ def book_seat(request):
 
 def notification(request):
     return render(request, 'library/notification.html')
-
-def break_status(request):
-    return render(request, 'library/break.html')
