@@ -37,8 +37,15 @@
     </section>
 
     <section>
+        <div class="button-container">
         <div class="card">
-
+            <h2>Permanent Checkout</h2><br>
+            <button class="seat-select1" onclick="permanentCheckout()">Checkout</button>
+        </div><br>
+        <div class="card">
+            <h2>Temporary Break</h2><br>
+            <button class="seat-select1">Checkout</button>
+        </div>
         </div>
     </section>
 
@@ -47,4 +54,26 @@
     </footer>
 
 </body>
+
+<script>
+    function permanentCheckout(){
+
+    let savedSeat =
+        localStorage.getItem("reservedSeat");
+
+    if(!savedSeat){
+
+        alert("No active reservation.");
+        return;
+    }
+
+    localStorage.removeItem("reservedSeat");
+    localStorage.removeItem("reservationStart");
+
+    alert("Checked Out Successfully!");
+
+    window.location.href = "/index";
+}
+</script>
+
 </html>
