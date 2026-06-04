@@ -1,6 +1,22 @@
 let startTime = localStorage.getItem("reservationStart");
 
-if(startTime){
+let savedSeat = localStorage.getItem("reservedSeat");
+
+let isOccupied = false;
+
+if(savedSeat){
+
+    let data = JSON.parse(savedSeat);
+
+    if(data.status === "Occupied"){
+        isOccupied = true;
+
+        document.getElementById("countdown").innerText =
+            "Checked In";
+    }
+}
+
+if(startTime && !isOccupied){
 
     let reservationDuration = 30 * 60 * 1000;
 
@@ -14,20 +30,18 @@ if(startTime){
 
         if(remaining <= 0){
 
-    clearInterval(timer);
+            clearInterval(timer);
 
-    localStorage.removeItem("reservationStart");
-    localStorage.removeItem("reservedSeat");
+            localStorage.removeItem("reservationStart");
+            localStorage.removeItem("reservedSeat");
 
-    document.getElementById("countdown").innerText =
-    "Expired";
+            document.getElementById("countdown").innerText =
+                "Expired";
 
-    alert("Reservation Expired!");
+            alert("Reservation Expired!");
 
-    window.location.href = "{% url 'seat' %}";
-
-    return;
-}
+            return;
+        }
 
         let minutes =
             Math.floor(remaining / 1000 / 60);
@@ -45,11 +59,10 @@ if(startTime){
 
     let timer = setInterval(updateTimer,1000);
 }
-else{
+else if(!savedSeat){
 
     document.getElementById("countdown").innerText =
-    "No Reservation";
-
+        "No Reservation";
 }
 
 window.onload = function(){
@@ -59,33 +72,55 @@ window.onload = function(){
 
     if(savedSeat){
 
-        let data = JSON.parse(savedSeat);
+    let data = JSON.parse(savedSeat);
 
-        document.getElementById("seat-number").innerText =
-            data.seat;
+    if(data.status === "Occupied"){
 
-        document.getElementById("seat-floor").innerText =
-            data.floor.charAt(0).toUpperCase() +
-            data.floor.slice(1) + " Floor";
-
-        document.getElementById("seat-status").innerText =
-            "Reserved";
+        document.getElementById("countdown").innerText =
+            "Checked In";
     }
 
-    let reservedData = localStorage.getItem("reservedSeat");
+    document.getElementById("seat-number").innerText =
+        data.seat;
+
+    document.getElementById("seat-floor").innerText =
+        data.floor.charAt(0).toUpperCase() +
+        data.floor.slice(1) + " Floor";
+
+    document.getElementById("seat-status").innerText =
+        data.status || "Reserved";
+
+    document.getElementById("checkin-time").innerText =
+        data.checkinTime || "--";
+}
 
     let totalSeats = 450;
 
-    if(reservedData){
+if(savedSeat){
 
-        document.getElementById("reserved-seats").innerText = 1;
+    let data = JSON.parse(savedSeat);
+
+    if(data.status === "Occupied"){
+
+        document.getElementById("occupied-seats").innerText = 1;
+        document.getElementById("reserved-seats").innerText = 0;
         document.getElementById("available-seats").innerText = totalSeats - 1;
+
     }
     else{
 
-        document.getElementById("reserved-seats").innerText = 0;
-        document.getElementById("available-seats").innerText = totalSeats;
+        document.getElementById("occupied-seats").innerText = 0;
+        document.getElementById("reserved-seats").innerText = 1;
+        document.getElementById("available-seats").innerText = totalSeats - 1;
+
     }
 
+}
+else{
+
     document.getElementById("occupied-seats").innerText = 0;
+    document.getElementById("reserved-seats").innerText = 0;
+    document.getElementById("available-seats").innerText = totalSeats;
+
+}
 }

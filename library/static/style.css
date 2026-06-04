@@ -138,6 +138,11 @@
     background-color:#ffffff;
     border-color: #ccc;
 }
+
+.seat-box.occupied{
+    background: rgb(126, 241, 126);
+    border-color: #1d4ed8;
+}
         
         .top-section{
     display:flex;

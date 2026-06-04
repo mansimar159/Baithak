@@ -34,7 +34,8 @@ function confirmSeat(){
     "reservedSeat",
     JSON.stringify({
         floor: reservedSeat.dataset.floor,
-        seat: reservedSeat.innerText.trim()
+        seat: reservedSeat.innerText.trim(),
+        status: "Reserved"
     })
 );
 
@@ -51,7 +52,10 @@ function cancelSeat(){
 
     if(reservedSeat){
 
-        reservedSeat.classList.remove('reserved');
+        reservedSeat.classList.remove(
+            'reserved',
+            'occupied'
+        );
 
         localStorage.removeItem("reservedSeat");
         localStorage.removeItem("reservationStart");
@@ -64,28 +68,45 @@ function cancelSeat(){
     }
 }
 
+console.log("Reached checkIn definition");
+
+function checkIn(){
+
+    console.log(reservedSeat);
+
+    if(!reservedSeat){
+
+        alert("Reserve a seat first.");
+        return;
+    }
+
+    reservedSeat.classList.remove("reserved");
+    reservedSeat.classList.add("occupied");
+
+    let data = JSON.parse(
+        localStorage.getItem("reservedSeat")
+    );
+
+    data.status = "Occupied";
+
+    data.checkinTime =
+        new Date().toLocaleTimeString();
+
+    localStorage.setItem(
+        "reservedSeat",
+        JSON.stringify(data)
+    );
+
+    alert("Check-In Successful!");
+}
+
 window.onload = function(){
 
     let savedSeat = localStorage.getItem("reservedSeat");
 
-if(savedSeat){
+    if(savedSeat){
 
-    let data = JSON.parse(savedSeat);
-
-    document.querySelectorAll(".seat-box").forEach(box => {
-
-        if(
-            box.dataset.floor === data.floor &&
-            box.innerText.trim() === data.seat
-        ){
-            box.classList.add("reserved");
-            reservedSeat = box;
-        }
-
-    });
-}
-
-    if(data){
+        let data = JSON.parse(savedSeat);
 
         document.querySelectorAll(".seat-box").forEach(box => {
 
@@ -93,10 +114,16 @@ if(savedSeat){
                 box.dataset.floor === data.floor &&
                 box.innerText.trim() === data.seat
             ){
-                box.classList.add("reserved");
+
+                if(data.status === "Occupied"){
+                    box.classList.add("occupied");
+                }
+                else{
+                    box.classList.add("reserved");
+                }
+
                 reservedSeat = box;
             }
-
         });
     }
 }

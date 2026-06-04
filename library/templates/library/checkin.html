@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check In</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+    <br>
+<h1 style="text-align: center;">Library Check In</h1><br>
+
+<p id="message" style="text-align: center;">You have 30 minutes to check in.</p><br>
+
+<div style="display: flex; justify-content: center;">
+<button class="seat-select1" onclick="checkIn()">
+    Check In
+</button>
+</div>
+
+<script src="{% static 'checkin.js' %}"></script>
+
+</body>
+</html>
