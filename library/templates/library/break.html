@@ -44,7 +44,7 @@
         </div><br>
         <div class="card">
             <h2>Temporary Break</h2><br>
-            <button class="seat-select1">Checkout</button>
+            <button class="seat-select1" onclick="temporaryCheckout()">Checkout</button>
         </div>
         </div>
     </section>
@@ -71,6 +71,50 @@
     localStorage.removeItem("reservationStart");
 
     alert("Checked Out Successfully!");
+
+    window.location.href = "/index";
+}
+
+function temporaryCheckout(){
+
+    let savedSeat =
+        localStorage.getItem("reservedSeat");
+
+    if(!savedSeat){
+
+        alert("No active reservation.");
+        return;
+    }
+
+    let data = JSON.parse(savedSeat);
+
+    if(data.tempCheckoutUsed){
+
+        alert(
+            "Temporary checkout already used. Check in again before using it."
+        );
+        return;
+    }
+
+    data.status = "Reserved";
+
+    data.tempCheckoutUsed = true;
+
+    delete data.checkinTime;
+
+    localStorage.setItem(
+        "reservedSeat",
+        JSON.stringify(data)
+    );
+
+    localStorage.setItem(
+        "reservationStart",
+        new Date().getTime()
+    );
+
+    alert(
+        "Temporary Checkout Successful."
+    );
 
     window.location.href = "/index";
 }
