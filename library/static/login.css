@@ -8,6 +8,10 @@
         body{
             background:#f4f6f9;
             color:#333;
+            background-image: url("https://plain-eeur-prod-public.komododecks.com/202606/05/pxF8viXZkQimueBuJZ8x/image.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         /* Navbar */
@@ -74,19 +78,57 @@
             margin:70px auto;
             width: 400px;
             padding: 30px;
-            background: white;
+            background: #F5F0E8;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h4{
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            margin-top: 20%;
+            font-family: 'Times New Roman', Times, serif;
+            size: 20px;
+            font-weight: lighter;
         }
 
         h2 {
             text-align: center;
             margin-bottom: 20px;
-            color: #333;
+            color:#F5F0E8;
+            width: 30%;
+            margin:auto;
+            margin-bottom: 10%;
+            font-weight: 300;
+            font-family: 'Times New Roman', Times, serif;
+    
         }
+        .text{
+            text-align: center;
+           
+            color:#000000;
+            font-weight: 100;
+            font-family: 'Playfair Display', serif;
+        }
+
+        
+        .oval {
+        display: inline-block;
+        padding: 8px 20px;
+        border: 2px solid #4F0809;
+        border-radius: 20px;
+        margin: auto;
+        width: 35%;
+        height: 30%;
+        margin-bottom: 10%;
+        margin-left: 30%;
+        margin-top: 20px;
+}
+        
 
         .input-group {
             margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
         }
 
         label {
@@ -103,14 +145,19 @@
         }
 
         .btn {
-            width: 100%;
+            width: 30%;
             padding: 12px;
-            background-color: #0056b3;
+            background-color: #4F0809;
             color: white;
             border: none;
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
+            align-items: center;
+            margin: auto;
+            margin-left: 35%;
+            margin-top: 10%;
+            font-family: 'Playfair Display', serif;
         }
 
         .btn:hover {

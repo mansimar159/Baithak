@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Login</title>
-    <link rel="stylesheet" href="{% static 'style1.css' %}">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
         </ul>
     </nav>
 
-    <section class="hero">
+    <!--<section class="hero">
         <div class="hero-content">
             <h1>Find. Book. Study.</h1>
 
@@ -31,16 +31,23 @@
                 using QR-based verification.
             </p>
         </div>
-    </section>
-
+    </section> -->
+    
     <div class="login-container">
-        <h2>Student Login</h2>
+        
+        <h2 style="background-color:#4F0809 ;" class="oval">Baithak</h2>
+    <div class="heading">
+        <h3 class="text" style="size: 35%">Welcome Back</h3>
+        <p class="text" style="margin-top: 2%; margin-bottom:4%">Sign in to continue to your account</p>
+    </div>
+        
 
         {% if error %}
         <p style="color:red; text-align:center; margin-bottom:15px;">
         {{ error }}
     </p>
     {% endif %}
+    
 
         <form method="POST">
             {% csrf_token %}
@@ -66,6 +73,8 @@
             </div>
 
             <button type="submit" class="btn">Login</button>
+            <h4>"He who lends a book is an idiot. He who returns it is more so."</h4>
+            <h5>- Arabic Proverb</h5>
 
         </form>
     </div>

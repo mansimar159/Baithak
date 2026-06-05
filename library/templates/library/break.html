@@ -11,40 +11,113 @@
 
 <body>
 
-    <nav>
-        <h2><a href="{% url 'index' %}">Baithak</a></h2>
-
-        <ul>
-            <li><a href="{% url 'index' %}">Dashboard</a></li>
-            <li><a href="{% url 'seat' %}">Book Seat</a></li>
-            <li><a href="{% url 'break' %}">Break Status</a></li>
-            <li><a href="{% url 'notification' %}">Notifications</a></li>
-            <li><a href="{% url 'home' %}">Logout</a></li>
-        </ul>
-    </nav>
-
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Find. Book. Study.</h1>
-
-            <p>
-                Baithak is a smart library seat booking and occupancy
-                management platform that helps students reserve seats,
-                view real-time availability, and eliminate ghost bookings
-                using QR-based verification.
-            </p>
-        </div>
-    </section>
+    <br>
+    <h1 style="text-align: center;">Library Check Out</h1><br>
 
     <section>
+        <div class="button-container">
         <div class="card">
-
+            <h2>Permanent Checkout</h2><br>
+            <button class="seat-select1" onclick="permanentCheckout()">Checkout</button>
+        </div><br>
+        <div class="card">
+            <h2>Temporary Break</h2><br>
+            <button class="seat-select1" onclick="temporaryCheckout()">Checkout</button>
+        </div><br>
+        <div class="card">
+            <h2>Left Without Temporary Checkout</h2><br>
+            <button class="seat-select1" onclick="leaveLibrary()">Left</button>
+        </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 Baithak | Smart Library Seat Booking System</p>
+        <p>© 2026 Baithak | Smart Library <a href="{% url 'index' %}" style="color: white;">Seat</a> Booking System</p>
     </footer>
 
 </body>
+
+<script>
+    function permanentCheckout(){
+
+    let savedSeat =
+        localStorage.getItem("reservedSeat");
+
+    if(!savedSeat){
+
+        alert("No active reservation.");
+        return;
+    }
+
+    localStorage.removeItem("reservedSeat");
+    localStorage.removeItem("reservationStart");
+
+    alert("Checked Out Successfully!");
+
+    window.location.href = "/index";
+}
+
+function temporaryCheckout(){
+
+    let savedSeat =
+        localStorage.getItem("reservedSeat");
+
+    if(!savedSeat){
+
+        alert("No active reservation.");
+        return;
+    }
+
+    let data = JSON.parse(savedSeat);
+
+    if(data.tempCheckoutUsed){
+
+        alert(
+            "Temporary checkout already used. Check in again before using it."
+        );
+        return;
+    }
+
+    data.status = "Reserved";
+
+    data.tempCheckoutUsed = true;
+
+    delete data.checkinTime;
+
+    localStorage.setItem(
+        "reservedSeat",
+        JSON.stringify(data)
+    );
+
+    localStorage.setItem(
+        "reservationStart",
+        new Date().getTime()
+    );
+
+    alert(
+        "Temporary Checkout Successful."
+    );
+
+    window.location.href = "/index";
+}
+
+function leaveLibrary() {
+    localStorage.setItem(
+        "libraryWarning",
+        "true"
+    );
+
+    localStorage.setItem(
+        "warningStart",
+        new Date().getTime()
+    );
+
+    alert(
+        "You left the library without Temporary or Permanent Checkout. You have 5 minutes to return and checkout."
+    );
+
+    window.location.href = "/notification";
+}
+</script>
+
 </html>

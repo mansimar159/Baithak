@@ -17,7 +17,6 @@
         <ul>
             <li><a href="{% url 'index' %}">Dashboard</a></li>
             <li><a href="{% url 'seat' %}">Book Seat</a></li>
-            <li><a href="{% url 'break' %}">Break Status</a></li>
             <li><a href="{% url 'notification' %}">Notifications</a></li>
             <li><a href="{% url 'home' %}">Logout</a></li>
         </ul>
@@ -38,13 +37,14 @@
 
     <section>
         <div class="card">
-
+            <h2 id="notification-message">No Notifications</h2>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 Baithak | Smart Library Seat Booking System</p>
+        <p>© 2026 Baithak | Smart <a href="{% url 'checkin' %}" style="color: white;">Library</a> Seat Booking System</p>
     </footer>
 
+<script src="{% static 'notification.js' %}"></script>
 </body>
 </html>
