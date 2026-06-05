@@ -8,6 +8,10 @@
         body{
             background:#f4f6f9;
             color:#333;
+            background-image: url("https://plain-eeur-prod-public.komododecks.com/202606/05/pxF8viXZkQimueBuJZ8x/image.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         /* Navbar */
@@ -107,10 +111,7 @@
             font-family: 'Times New Roman', Times, serif;
         }
 
-        .heading{
-            margin-top: 5%;
-            margin-bottom: 5%;
-        }
+        
         .oval {
         display: inline-block;
         padding: 8px 20px;
