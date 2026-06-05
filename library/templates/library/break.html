@@ -26,7 +26,7 @@
         </div><br>
         <div class="card">
             <h2>Left Without Temporary Checkout</h2><br>
-            <button class="seat-select1">Left</button>
+            <button class="seat-select1" onclick="leaveLibrary()">Left</button>
         </div>
         </div>
     </section>
@@ -99,6 +99,22 @@ function temporaryCheckout(){
     );
 
     window.location.href = "/index";
+}
+
+function leaveLibrary() {
+    localStorage.setItem(
+        "libraryWarning",
+        "true"
+    );
+
+    localStorage.setItem(
+        "warningStart",
+        new Date().getTime()
+    );
+
+    alert(
+        "You left the library without Temporary or Permanent Checkout. You have 5 minutes to return and checkout."
+    );
 }
 </script>
 
