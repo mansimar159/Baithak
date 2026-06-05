@@ -51,8 +51,8 @@ def index_view(request):
 
 def book_seat(request):
     return render(request, 'library/seat.html', {
-        "seats0": range(1, 189),
-        "seats1": range(1, 83),
+        "seats0": range(1, 185),
+        "seats1": range(1, 87),
         "seats2": range(1, 61),
         "seats3": range(1, 55),
         "seats4": range(1, 67)
