@@ -1,0 +1,183 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Playfair Display', serif;
+    background:#4f0809;
+}
+
+/* =====================
+   HOME + DASHBOARD
+===================== */
+
+header{
+    position:absolute;
+    width:100%;
+    top:20px;
+    padding:0 50px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    z-index:100;
+}
+
+.logo {
+    width: 10px;
+    height: 10px;                  
+
+}
+
+.brand{
+    color:white;
+    background:#6d0000;
+    padding:8px 20px;
+}
+
+.signin-btn,
+.menu-btn{
+    text-decoration:none;
+    color:white;
+    background:#6d0000;
+    padding:10px 20px;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+}
+
+.hero{
+    height:100vh;
+
+    background-image:
+    linear-gradient(
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4)
+    ),
+    url("https://plain-apac-prod-public.komododecks.com/202606/05/5EqdoCLZiBYfKSTHuqqz/image.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+}
+
+.overlay{
+    color:white;
+    margin-left:100px;
+    max-width:600px;
+}
+
+.overlay h2{
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.overlay p{
+    line-height:1.7;
+}
+
+/* =====================
+   SIGN IN PAGE
+===================== */
+
+.signin-page{
+    background-image:
+    linear-gradient(
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4)
+    ),
+    url("   -   ");
+
+    background-size:cover;
+    background-position:center;
+
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-box{
+    background:#f7f4ed;
+
+    width:420px;
+
+    padding:40px;
+
+    text-align:center;
+}
+
+.login-box h3{
+    background:#6d0000;
+    color:white;
+
+    display:inline-block;
+
+    padding:8px 20px;
+
+    margin-bottom:20px;
+}
+
+.login-box h1{
+    margin-bottom:10px;
+}
+
+.login-box form{
+    display:flex;
+    flex-direction:column;
+    margin-top:25px;
+}
+
+.login-box input{
+    padding:12px;
+    margin-bottom:15px;
+}
+
+.login-box button{
+    background:#6d0000;
+    color:white;
+
+    border:none;
+
+    padding:12px;
+
+    cursor:pointer;
+}
+
+blockquote{
+    margin-top:30px;
+    font-style:italic;
+}
+
+/* =====================
+   DASHBOARD MENU
+===================== */
+
+.sidebar{
+    position:absolute;
+
+    top:90px;
+    right:20px;
+
+    width:220px;
+
+    background:#6d0000;
+
+    color:white;
+
+    padding:25px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    margin-bottom:20px;
+}

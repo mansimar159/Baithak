@@ -4,156 +4,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baithak - Smart Library Seat Booking</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Baithak</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
 </head>
-
 <body>
 
-    <nav>
-        <h2><a href="{% url 'home' %}">Baithak</a></h2>
+    <header>
+        <section class="logo">
 
-        <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'home' %}#how-it-works">How It Works</a></li>
-            <li><a href="{% url 'login' %}">Login</a></li>
-        </ul>
-    </nav>
+        <!-- <img src="{% static 'Thapar_Institute_of_Engineering_and_Technology_logo-removebg-preview.jpg' %}" alt="Thapar Logo"> -->
+
+        </section>
+
+        <h1 class="brand">Baithak</h1>
+
+        <a href="{% url 'login' %}" class="signin-btn">
+            Sign In
+        </a>
+    </header>
 
     <section class="hero">
-        <div class="hero-content">
-            <h1>Find. Book. Study.</h1>
+
+        <div class="overlay">
+
+            <h2>Nava Nalanda Central Library</h2>
 
             <p>
-                Baithak is a smart library seat booking and occupancy
-                management platform that helps students reserve seats,
-                view real-time availability, and eliminate ghost bookings
-                using QR-based verification.
+                Reserve your study desk before you arrive.
+                Verify your presence with a QR scan.
+                Should you wander too long, your seat returns
+                to the commons.
             </p>
-        </div>
-    </section>
-
-    <section>
-
-        <div class="section-title">
-            <h2>Why Baithak?</h2>
-        </div>
-
-        <div class="features">
-
-            <div class="card">
-                <h3>📍 Real-Time Seat Map</h3>
-                <p>
-                    View available and occupied seats instantly before
-                    reaching the library.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>📱 QR Check-In</h3>
-                <p>
-                    Each seat has a unique QR code to verify actual
-                    occupancy and prevent fake reservations.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>⏳ Auto Release</h3>
-                <p>
-                    Seats are automatically released if users fail to
-                    check in or remain absent for too long.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>🔔 Instant Notifications</h3>
-                <p>
-                    Receive alerts for check-in deadlines, break expirations,
-                    and automatic seat release events.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>🔇 Quiet Zones</h3>
-                <p>
-                    Dedicated silent study areas for students requiring
-                    maximum concentration.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>🪑 Fair Seat Usage</h3>
-                <p>
-                    Prevents students from reserving seats by leaving bags,
-                    books, or personal belongings unattended for long periods.
-                    Seats are automatically released when occupancy rules are violated.
-                </p>
-            </div>
-            <div class="card">
-                <h3>🔐 Secure Login</h3>
-                <p>
-                    College email authentication ensures secure access
-                    for verified students.
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="how-it-works" style="background:white;">
-
-        <div class="section-title">
-            <h2>How It Works</h2>
-        </div>
-
-        <div class="steps">
-
-            <div class="step">
-                <h3>1. Check Availability</h3>
-                <p>View live library seat status remotely.</p>
-            </div>
-
-            <div class="step">
-                <h3>2. Reserve Seat</h3>
-                <p>Select and book an available seat instantly.</p>
-            </div>
-
-            <div class="step">
-                <h3>3. Scan QR Code</h3>
-                <p>Verify occupancy when you arrive.</p>
-            </div>
-
-            <div class="step">
-                <h3>4. Study Efficiently</h3>
-                <p>Unused seats are automatically reallocated.</p>
-            </div>
 
         </div>
 
     </section>
-
-    <section>
-
-        <div class="section-title">
-            <h2>Future Scope</h2>
-        </div>
-
-        <div class="card">
-            <h3>🤖 AI-Powered Occupancy Detection</h3>
-            <p>
-                Future versions of Baithak will integrate YOLO and OpenCV
-                for privacy-first occupancy monitoring without storing
-                facial data, making seat utilization even smarter and
-                more accurate.
-            </p>
-        </div>
-
-    </section>
-
-    <footer>
-        <p>© 2026 Baithak | Smart Library Seat Booking System</p>
-    </footer>
 
 </body>
 </html>
