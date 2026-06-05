@@ -6,28 +6,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baithak - Smart Library Seat Booking</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'break.css' %}"> 
 </head>
 
 <body>
+    <nav>
+        <h2><a href="{% url 'home' %}">Baithak</a></h2>
+
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'home' %}#how-it-works">How It Works</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+        </ul>
+    </nav>
 
     <br>
-    <h1 style="text-align: center;">Library Check Out</h1><br>
-
+    <h1 style="text-align: center; font-family: 'Playfair Display', serif; margin-top: 5px;">Library Check Out</h1><br>
+    
     <section>
         <div class="button-container">
-        <div class="card">
-            <h2>Permanent Checkout</h2><br>
-            <button class="seat-select1" onclick="permanentCheckout()">Checkout</button>
-        </div><br>
-        <div class="card">
-            <h2>Temporary Break</h2><br>
+       
+            <br>
+            <button class="seat-select1" onclick="permanentCheckout()">Permanent Checkout</button>
+        <br>
+        
+            <button class="seat-select1" onclick="temporaryCheckout">Temporary Break</button>
+            <!--<h2>Temporary Break</h2><br>
             <button class="seat-select1" onclick="temporaryCheckout()">Checkout</button>
-        </div><br>
-        <div class="card">
-            <h2>Left Without Temporary Checkout</h2><br>
-            <button class="seat-select1" onclick="leaveLibrary()">Left</button>
-        </div>
+        -->
+        <br> 
+          
+            
+            <button class="seat-select1" onclick="leaveLibrary()">Left without temporary checkout</button>
+       
         </div>
     </section>
 
