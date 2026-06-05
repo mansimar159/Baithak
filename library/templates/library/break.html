@@ -11,6 +11,9 @@
 
 <body>
 
+    <br>
+    <h1 style="text-align: center;">Library Check Out</h1><br>
+
     <section>
         <div class="button-container">
         <div class="card">
@@ -20,12 +23,16 @@
         <div class="card">
             <h2>Temporary Break</h2><br>
             <button class="seat-select1" onclick="temporaryCheckout()">Checkout</button>
+        </div><br>
+        <div class="card">
+            <h2>Left Without Temporary Checkout</h2><br>
+            <button class="seat-select1">Left</button>
         </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 Baithak | Smart Library Seat Booking System</p>
+        <p>© 2026 Baithak | Smart Library <a href="{% url 'index' %}" style="color: white;">Seat</a> Booking System</p>
     </footer>
 
 </body>
