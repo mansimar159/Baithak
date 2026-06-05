@@ -3,12 +3,16 @@ let start =
 
 if(start){
 
-    let now = new Date().getTime();
-
     let elapsed =
-        now - start;
+        Date.now() - start;
 
-    if(elapsed >= 5 * 60 * 1000){
+    let warning =
+        localStorage.getItem("libraryWarning");
+
+    if(
+        warning === "true" &&
+        elapsed >= 5 * 60 * 1000
+    ){
 
         localStorage.removeItem(
             "reservedSeat"
@@ -37,11 +41,18 @@ window.onload = function(){
     let warning =
         localStorage.getItem("libraryWarning");
 
-    if(warning){
+    if(warning === "true"){
 
         document.getElementById(
             "notification-message"
         ).innerText =
         "You have left the library without Temporary or Permanent Checkout. Go back and checkout within 5 minutes or your seat will be vacated.";
+    }
+    else{
+
+        document.getElementById(
+            "notification-message"
+        ).innerText =
+        "No Notifications";
     }
 }

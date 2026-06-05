@@ -20,6 +20,9 @@ function checkIn(){
         JSON.stringify(data)
     );
 
+    localStorage.removeItem("libraryWarning");
+    localStorage.removeItem("warningStart");
+
     alert("Check-In Successful!");
 
     window.location.href = "/book_seat";
