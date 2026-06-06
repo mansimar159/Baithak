@@ -9,9 +9,7 @@ body{
     background:#4f0809;
 }
 
-/* =====================
-   HOME + DASHBOARD
-===================== */
+/* HOME + DASHBOARD */
 
 header{
     position:absolute;
@@ -81,9 +79,7 @@ header{
     line-height:1.7;
 }
 
-/* =====================
-   SIGN IN PAGE
-===================== */
+/* SIGN IN PAGE */
 
 .signin-page{
     background-image:
@@ -155,9 +151,7 @@ blockquote{
     font-style:italic;
 }
 
-/* =====================
-   DASHBOARD MENU
-===================== */
+/* DASHBOARD MENU */
 
 .sidebar{
     position:absolute;

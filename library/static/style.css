@@ -278,3 +278,93 @@
             text-align:center;
             padding:20px;
         }
+
+        /* HOW IT WORKS*/
+
+.how-it-works{
+
+    background:#f5f1ea;
+
+    padding:70px 8%;
+
+    text-align:center;
+}
+
+.how-it-works h2{
+
+    color:#690707;
+
+    font-size:42px;
+
+    margin-bottom:50px;
+
+    font-family:Georgia, serif;
+}
+
+.steps{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+}
+
+.step{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:10px;
+
+    box-shadow:
+    0 4px 10px rgba(0,0,0,.1);
+
+    transition:.3s;
+}
+
+.step:hover{
+
+    transform:translateY(-5px);
+}
+
+.step span{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:55px;
+
+    height:55px;
+
+    margin:0 auto 15px;
+
+    border-radius:50%;
+
+    background:#690707;
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:bold;
+}
+
+.step h3{
+
+    color:#690707;
+
+    margin-bottom:10px;
+}
+
+.step p{
+
+    color:#444;
+
+    line-height:1.6;
+}
