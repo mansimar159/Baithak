@@ -181,3 +181,10 @@ blockquote{
 .sidebar li{
     margin-bottom:20px;
 }
+
+.foot{
+            background:#4f0809;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
