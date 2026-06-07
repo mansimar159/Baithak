@@ -14,9 +14,9 @@
         <h2><a href="{% url 'home' %}">Baithak</a></h2>
 
         <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'home' %}#how-it-works">How It Works</a></li>
-            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'index' %}">Dashboard</a></li>
+            <li><a href="{% url 'index' %}#how-it-works">How It Works</a></li>
+            <li><a href="{% url 'login' %}">Logout</a></li>
         </ul>
     </nav>
 
@@ -113,6 +113,26 @@ function temporaryCheckout(){
 }
 
 function leaveLibrary() {
+
+    let savedSeat =
+        localStorage.getItem("reservedSeat");
+
+    if(!savedSeat){
+
+        alert("No active reservation found.");
+        return;
+    }
+
+    let data = JSON.parse(savedSeat);
+
+    if(data.status !== "Occupied"){
+
+        alert(
+            "You must have an occupied seat before leaving the library."
+        );
+        return;
+    }
+
     localStorage.setItem(
         "libraryWarning",
         "true"
